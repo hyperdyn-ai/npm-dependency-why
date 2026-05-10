@@ -36,36 +36,6 @@ The package also provides a shorter alias `ndw` and `npmwhy` for easier typing w
 ndw lodash
 ```
 
-### As a Web Dashboard
-
-Clone the repository and run:
-
-```bash
-git clone https://github.com/hyperdyn-ai/npm-dependency-why.git
-cd npm-dependency-why
-npm install
-npm run dev
-```
-
-## Usage
-
-### CLI Examples
-
-You can use either `npm-dependency-why` or the shorter `ndw` alias:
-
-```bash
-# Basic usage
-ndw lodash
-
-# Output with package information
-ndw react
-
-# JSON output for automation
-ndw express --json
-
-# Scoped packages
-ndw @radix-ui/react-dialog
-```
 
 ### CLI Output
 
@@ -113,17 +83,6 @@ Returns:
 }
 ```
 
-## Web Dashboard Features
-
-The web dashboard provides:
-
-- **Real-time Analysis**: Analyze packages with a beautiful interface
-- **Query History**: Browse and re-examine previous analyses
-- **Detailed Metrics**: View size impact, tree depth, and package metadata
-- **Syntax Highlighting**: Color-coded dependency trees for easy reading
-- **Responsive Design**: Works seamlessly on desktop and mobile devices
-
-## What Can It Tell You?
 
 ### 1. Dependency Chain
 Understand the complete path from your project to any package. Know whether it's a direct dependency or pulled in transitively.
@@ -173,14 +132,7 @@ npm-dependency-why package-name
 # Compare results
 ```
 
-### Review Pull Requests
 
-When reviewing a PR that adds a dependency:
-
-```bash
-npm-dependency-why new-package-from-pr
-# Understand the impact and necessity
-```
 
 ## How It Works
 
