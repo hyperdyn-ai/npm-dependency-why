@@ -5,9 +5,11 @@ A command-line tool and web dashboard to instantly trace npm dependency chains a
 ## Features
 
 - **Dependency Chain Tracing**: Visualizes the complete dependency chain from your project to any package
+- **All Matching Chains (`--all`)**: Shows every discovered path from your app to the target package
 - **Size Impact Analysis**: Shows unpacked size and install footprint of packages
 - **Package Metadata**: Displays version, repository, homepage, and maintainer information
 - **Tree Depth Tracking**: Identifies whether a package is a direct or transitive dependency
+- **Safer Execution**: Input validation and non-shell npm command execution to reduce injection risks
 - **Web Dashboard**: Beautiful UI for analyzing and storing query history
 - **CLI Tool**: Fast command-line interface for quick lookups
 - **JSON Output**: Machine-readable format for scripting and automation
@@ -26,6 +28,9 @@ Or use with npx:
 npx npm-dependency-why <package-name>
 # Or use the shorter alias
 npx ndw <package-name>
+
+# Find every dependency chain leading to a package
+npx ndw <package-name> --all
 ```
 
 ### Note on Alias
@@ -66,6 +71,12 @@ lodash
 ndw lodash --json
 ```
 
+For all paths in JSON:
+
+```bash
+ndw lodash --json --all
+```
+
 Returns:
 
 ```json
@@ -82,6 +93,19 @@ Returns:
   "depthInTree": 2
 }
 ```
+
+With `--all`, JSON also includes `chains` and `chainCount`.
+
+### CLI Options
+
+```bash
+ndw <package-name> [--json] [--all]
+ndw --help
+```
+
+- `--json`: Print machine-readable JSON output
+- `--all`: Show every matching dependency chain found in the dependency tree
+- `--help`: Show usage and options
 
 
 ### 1. Dependency Chain
@@ -143,8 +167,8 @@ npm-dependency-why package-name
 
 ## Requirements
 
-- Node.js 12+
-- npm 6+ (for CLI usage)
+- Node.js 16+
+- npm 8+ (for CLI usage)
 - For dashboard: PostgreSQL database (provided by Replit)
 
 ## Architecture

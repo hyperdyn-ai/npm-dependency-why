@@ -1,0 +1,52 @@
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# Testing
+/coverage
+
+# Production
+/dist
+/build
+*.tsbuildinfo
+
+# Misc
+.DS_Store
+*.env
+*.env.local
+*.env.*.local
+.vscode
+.idea
+*.swp
+*.swo
+*~
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# OS
+Thumbs.db
+.AppleDouble
+.LSOverride
+
+# IDE
+*.sublime-project
+*.sublime-workspace
+.vscode/
+.vscode-test/
+.history/
+
+# Temporary files
+tmp/
+temp/
